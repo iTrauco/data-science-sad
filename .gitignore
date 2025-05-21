@@ -1,0 +1,243 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+profile_default/
+ipython_config.py
+
+# Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.env
+.venv
+env/
+venv/
+ENV/
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# Data files
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.json
+*.sqlite
+*.db
+*.sql
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# Unless they're small and meant to be included
+!sample_data/*.csv
+!sample_data/*.json
+
+# Large media files
+*.mp4
+*.tiff
+*.avi
+*.flv
+*.mov
+*.wmv
+
+# Image files (comment out if needed for your examples)
+# *.jpg
+# *.jpeg
+# *.png
+# *.gif
+# *.svg
+
+# Model files
+*.model
+*.joblib
+*.h5
+*.pb
+*.pt
+*.pth
+*.onnx
+saved_models/
+checkpoints/
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# TensorFlow/Keras specific
+.keras/
+*.ckpt
+*.ckpt.*
+*.meta
+checkpoint
+events.out.tfevents.*
+
+# PyTorch specific
+*.pt
+*.pth
+
+# MLflow
+mlruns/
+
+# Weights & Biases
+wandb/
+
+# DVC
+.dvc/
+
+# Credentials and secrets - never commit these!
+*.pem
+*_key
+*_token
+*_secret
+credentials.json
+client_secrets.json
+.env
+.secret
+apikey.txt
+password.txt
+secrets.yaml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Large folders that should be generated locally
+data/
+raw_data/
+processed_data/
+outputs/
+results/
+# Comment these out if you want to include them in the repo
+# But consider using DVC instead for large data
