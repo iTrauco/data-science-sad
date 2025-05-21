@@ -241,3 +241,8 @@ outputs/
 results/
 # Comment these out if you want to include them in the repo
 # But consider using DVC instead for large data
+
+# development
+*artifacts*
+artifacts/
+*artifact*
