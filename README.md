@@ -43,7 +43,71 @@ The proposal includes high-level specifications for:
 ## Reproducibility Framework
 ### Environment Setup
 
-This project uses a Conda environment to manage dependencies for reproducible analysis. Environment specifications and setup instructions will be provided once the specific requirements for the multi-object tracking computer vision challenge have been confirmed.
+This project uses a Conda environment to manage dependencies for reproducible analysis. Follow these steps to set up the environment:
+
+#### Prerequisites
+- Anaconda or Miniconda installed on your system
+- Git for cloning the repository
+
+#### Setup Instructions
+
+1. Clone the repository and switch to the feature branch:
+   ```bash
+   git clone https://github.com/iTrauco/data-science-sad.git
+   cd data-science-sad
+   git checkout feature/scenario6-traffic-vision/multi-object-tracking
+   ```
+
+2. Create the Conda environment:
+   ```bash
+   conda create -n scenario6-traffic-vision python=3.9 -y
+   ```
+
+3. Activate the environment:
+   ```bash
+   conda activate scenario6-traffic-vision
+   ```
+
+4. Install baseline packages:
+   ```bash
+   conda install -c conda-forge jupyter numpy pandas matplotlib seaborn scikit-learn opencv -y
+   ```
+
+5. Install deep learning and computer vision packages:
+   ```bash
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+   pip install ultralytics supervision
+   ```
+
+6. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+
+7. Access the notebook in your browser via the URL displayed in the terminal
+
+#### Environment Details
+
+The environment includes essential data science and computer vision packages:
+- [Python 3.9](https://www.python.org/downloads/release/python-390/)
+- [Jupyter Notebook](https://jupyter.org/documentation)
+- [pandas](https://pandas.pydata.org/docs/) & [numpy](https://numpy.org/doc/stable/) for data manipulation
+- [matplotlib](https://matplotlib.org/stable/index.html) & [seaborn](https://seaborn.pydata.org/) for visualization
+- [scikit-learn](https://scikit-learn.org/stable/documentation.html) for traditional ML algorithms
+- [OpenCV](https://docs.opencv.org/4.x/) for image and video processing
+- [PyTorch](https://pytorch.org/docs/stable/index.html) for deep learning model development
+- [Ultralytics](https://docs.ultralytics.com/) for YOLO object detection
+- [Supervision](https://supervision.roboflow.com/) for object tracking utilities
+
+#### Environment Management
+
+For collaborators who enhance the environment with additional packages:
+
+```bash
+# Export the updated environment
+conda activate scenario6-traffic-vision
+conda env export > environment.yml
+```
 
 This notebook serves as a comprehensive system design proposal, providing the transportation research team with a structured approach to implementing computer vision models for their multi-object tracking and video analysis task.
 
