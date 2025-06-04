@@ -113,4 +113,4 @@ This notebook serves as a comprehensive system design proposal, providing the tr
 
 > **Note**: This is a personal repository for developing a systematic approach to data science, AI, and ML system engineering using information systems analysis and design principles. The source of truth for work completed in this repository is located in the notebook within the `notebooks/` directory, not in this README.
 
-> **Branch Scope**: All work for this project is scoped to the `feature/scenario6-traffic-vision/multi-object-tracking` branch only.
+> **Branch Scope**: All work for this project is scoped to the `scenario06/traffic-vision/multi-object-tracking` branch only.
