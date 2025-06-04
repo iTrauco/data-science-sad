@@ -55,7 +55,7 @@ This project uses a Conda environment to manage dependencies for reproducible an
    ```bash
    git clone https://github.com/iTrauco/data-science-sad.git
    cd data-science-sad
-   git checkout feature/scenario6-traffic-vision/multi-object-tracking
+   git checkout scenario06/traffic-vision/multi-object-tracking
    ```
 
 2. Create the Conda environment:
