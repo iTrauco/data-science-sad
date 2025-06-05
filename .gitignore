@@ -249,3 +249,46 @@ artifacts/
 
 # test ignore rule
 __testfile__
+
+
+# Environment files
+scenario8-format-conversion/
+*.yml
+!environment.yml  # Keep environment.yml but ignore other yml files
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# 3D file formats (to avoid committing large data files)
+*.stl
+*.ply
+*.obj
+*.pj3
+*.pjs
+*.igs
+*.mk2
+*.umk
+*.mtl
+*.3ds
+
+# Trimesh cache
+.trimesh.cache/
+
+# Open3D cache
+*.o3d.cache/
+
+# Temporary conversion files
+temp_convert/
+*.tmp.*
+
+# Log files
+*.log
+
+# OS specific
+.DS_Store
+Thumbs.db
