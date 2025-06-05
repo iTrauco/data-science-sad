@@ -249,3 +249,28 @@ artifacts/
 
 # test ignore rule
 __testfile__
+
+
+# 3D file outputs (if generating locally)
+*.stl
+*.ply
+*.obj
+*.mesh
+
+# Processing logs
+logs/
+*.log
+audit_trail/
+
+# Temporary processing files
+temp/
+processing/
+*.tmp
+
+# HDF5 temporary files
+*.h5
+*.hdf5
+
+# Validation reports (if generated)
+validation_reports/
+*.pdf
