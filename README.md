@@ -12,59 +12,63 @@ A transportation research team wants to analyze traffic camera footage to detect
 ## Proposal Framework
 This Jupyter notebook presents a systems analysis and design approach to the multi-object tracking computer vision challenge. The proposal follows established information systems design principles, emphasizing:
 - **Video Processing Architecture**: Methodical approach to streaming data and computational requirements
-- **Data Pipeline Design**: Structured approach to annotation, preprocessing, and training workflows
+- **Data System Design**: Structured approach to annotation, preprocessing, and training workflows
 - **Model Optimization Strategy**: Process-oriented approach to architecture selection and deployment
 - **System Evaluation Framework**: Comprehensive methodology for performance assessment and validation
 
 ## System Components
 The proposed solution addresses the following key subsystems:
-1. **Data Processing Subsystem**
-   - Video streaming and frame extraction
-   - Pre-processing pipeline design
-   - Data format standardization
-
-2. **Data Annotation Framework**
-   - Annotation tool integration and workflow
-   - Label format specifications
-   - Quality control mechanisms
-
-3. **Model Development Framework**
-   - Architecture selection and training
-   - Model optimization strategies
-   - Performance evaluation pipeline
-
-4. **Evaluation Infrastructure**
-   - Metrics selection and validation
-   - Performance analysis system
-   - Results visualization framework
-
-5. **Computing Environment Architecture**
-   - Resource allocation and scaling
-   - HPC/GPU utilization strategy
-   - Cloud storage integration
-
-6. **Reproducibility Framework**
-   - Version control and environment management
-   - Experiment tracking system
-   - Documentation standards
+1. **Data Management Subsystem** [Infrastructure]
+  - Stream recording system (HPC scripts for capture and .mp4 conversion)
+  - Video storage and cataloging
+  - Data format standardization
+2. **Data Preprocessing Subsystem** [MLOps]
+  - Frame extraction from recorded videos
+  - Pre-processing system design
+  - Data transformation for model training
+3. **Data Annotation Framework** [MLOps]
+  - Annotation tool integration and workflow
+  - Label format specifications
+  - Quality control mechanisms
+4. **Model Development Framework** [MLOps]
+  - Architecture selection and training
+  - Model optimization strategies
+  - Performance evaluation system
+5. **Evaluation Infrastructure** [MLOps]
+  - Metrics selection and validation
+  - Performance analysis system
+  - Results visualization framework
+6. **Computing Environment Architecture** [Infrastructure]
+  - Resource allocation and scaling
+  - HPC/GPU utilization strategy
+  - Cloud storage integration
+7. **Reproducibility Framework** [Infrastructure/MLOps]
+  - Version control and environment management
+  - Experiment tracking system
+  - Documentation standards
 
 ## Implementation Considerations
 The proposal includes high-level specifications for:
 - Recommended technology stack
 - System integration points
 - Resource requirements
-- Core pipeline components
+- Core system components
 - Learning resources through case study implementation and framework selection
 
-### Pipeline Components
+### Core System Components
+> **Note**: There is still overlap between infrastructure and MLOps components that will be worked out as we progress.
+
 After several iterations of development, the workflow has been refined to include these core components:
-- **Video Frame Extractor** (HPC batch processing for video to frame conversion)
-- **Annotation Pipeline Manager** (Workflow orchestration for labeling tasks)
-- **Model Training Scheduler** (GPU resource allocation and job management)
-- **Performance Evaluator** (Metrics computation and result aggregation)
-- **Data Pipeline Monitor** (Processing status and resource utilization tracker)
+- **Data Ingestion Manager** (HPC scripts for video capture and .mp4 conversion) [Infrastructure]
+- **Data Preprocessor** (Frame extraction and transformation workflows) [MLOps]
+- **Annotation System** (Data labeling tools and processes) [MLOps]
+- **Model Development** (Training and optimization) [MLOps]
+- **Evaluation System** (Performance testing and analysis) [Infrastructure/MLOps]
+- **Compute Environment** (GPU, memory, and processing resources) [Infrastructure]
+- **Reproducibility System** (Environment versioning and tracking) [Infrastructure/MLOps]
 
 *Note: These components are required deliverables and will be implemented as part of the system design.*
+
 
 ## Reproducibility Framework
 ### Environment Setup
@@ -115,7 +119,7 @@ This project uses a Conda environment to manage dependencies for reproducible an
 #### Environment Details
 
 The environment includes essential data science and computer vision packages:
-- [Python 3.9](https://www.python.org/downloads/release/python-390/)
+- [Python 3.11](https://www.python.org/downloads/release/python-3110/)
 - [Jupyter Notebook](https://jupyter.org/documentation)
 - [pandas](https://pandas.pydata.org/docs/) & [numpy](https://numpy.org/doc/stable/) for data manipulation
 - [matplotlib](https://matplotlib.org/stable/index.html) & [seaborn](https://seaborn.pydata.org/) for visualization
@@ -134,5 +138,4 @@ For collaborators who enhance the environment with additional packages:
 conda activate traffic-vision
 conda env export > environment.yml
 ```
-
-This notebook serves as a comprehensive system design proposal, providing the transportation research team with a structured approach to implementing computer vision models for their multi-object tracking and video analysis task. and result aggregation)
+This notebook serves as a comprehensive system design proposal, providing the transportation research team with a structured approach to implementing computer vision models for their multi-object tracking and video analysis task.
