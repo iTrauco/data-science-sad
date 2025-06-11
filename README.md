@@ -1,50 +1,138 @@
-# AI, ML, Data Science, and Research Systems Analysis and Design (SAD)
+# Multi-Object Tracking Computer Vision System Design Proposal
 
-This repository contains case studies, each scoped to their own branch, that demonstrate systems analysis and design approaches to the challenges of AI, ML, data science, and scientific research computing.
+> **Note**: This is a personal repository for developing a systematic approach to data science, AI, and ML system engineering using information systems analysis and design principles. The source of truth for work completed in this repository is located in the notebook within the `notebooks/` directory, not in this README.
 
-Each case study applies a comprehensive problem-solving methodology that views system design as 'a search or problem-solving process that uses means to achieve desired ends' ([Strohmann et al., 2023](https://lutpub.lut.fi/bitstream/handle/10024/166324/strohmann_et_al_design_principles_publishers_version.pdf?sequence=3&isAllowed=y)). This holistic approach integrates multiple types of knowledge from understanding the problem domain to developing practical solutions, creating a framework that addresses the complex, interconnected challenges found in modern computational research environments.
+> **Branch Scope**: All work for this project is scoped to the `traffic-vision/multi-object-tracking` branch only.
 
-The methodology's strength lies in its proven versatility across diverse technical domains, making it particularly effective for the multifaceted challenges of research computing infrastructure.
+> **Clean Rebuild No. 2**: This is a clean rebuild of the traffic-vision systems analysis and design proposal originally developed in [`scenario06/traffic-vision/multi-object-tracking`](https://github.com/iTrauco/data-science-sad/tree/scenario06/traffic-vision/multi-object-tracking), incorporating refined workflow architecture.
 
-## Purpose
+## Scenario Overview
+A transportation research team wants to analyze traffic camera footage to detect and track vehicles across multiple highway locations. They want to use computer vision models with optimization for deployment but struggle with handling streaming video data, model compression, and inference pipeline design and are unsure where to start. They have access to an HPC workstation with GPU and GCP for video storage and pipeline processing. This proposal outlines a systems approach for model development, data handling, and evaluation-including infrastructure recommendations for scalability and reproducibility.
 
-This repository demonstrates technical approaches to designing and implementing AI, ML, data science, and scientific computational systems that balance performance, scalability, and usability. It highlights architectural considerations for diverse computational and research workflows.
+## Proposal Framework
+This Jupyter notebook presents a systems analysis and design approach to the multi-object tracking computer vision challenge. The proposal follows established information systems design principles, emphasizing:
+- **Video Processing Architecture**: Methodical approach to streaming data and computational requirements
+- **Data Pipeline Design**: Structured approach to annotation, preprocessing, and training workflows
+- **Model Optimization Strategy**: Process-oriented approach to architecture selection and deployment
+- **System Evaluation Framework**: Comprehensive methodology for performance assessment and validation
 
-## Structure
+## System Components
+The proposed solution addresses the following key subsystems:
+1. **Data Processing Subsystem**
+   - Video streaming and frame extraction
+   - Pre-processing pipeline design
+   - Data format standardization
 
-The repository uses a branch-based organization where each case study is self-contained:
+2. **Data Annotation Framework**
+   - Annotation tool integration and workflow
+   - Label format specifications
+   - Quality control mechanisms
 
-- `main`: Contains the overview README and repository documentation
-- Case study branches: Each scenario is developed in its own dedicated branch with:
-  - Individual README with scenario-specific documentation
-  - `.gitignore` for environment-specific exclusions
-  - `notebooks/` directory containing the proposal Jupyter notebook
-  - `components/` directory with implementation modules, each in their own subdirectory
-  - `environment.yml` containing all conda environment specifications for the case study and its components
+3. **Model Development Framework**
+   - Architecture selection and training
+   - Model optimization strategies
+   - Performance evaluation pipeline
 
-## Case Studies Overview
+4. **Evaluation Infrastructure**
+   - Metrics selection and validation
+   - Performance analysis system
+   - Results visualization framework
 
-| Scenario | Topic | Notebook | Status |
-|:--------:|-------|:--------:|:------:|
-| 1 | [Imbalanced Classification System Design](https://github.com/iTrauco/data-science-sad/tree/feature/scenario1-imbalanced-classification) | [Case Study Proposal Notebook](https://github.com/iTrauco/data-science-sad/blob/feature/scenario1-imbalanced-classification/notebooks/Imbalanced_Classification_Deep_Learning_System_Analysis_And_Design_Proposal.ipynb) | 🔒 |
-| 2 | [Microscopy Classification](https://github.com/iTrauco/data-science-sad/tree/feature/scenario2-microscopy-classification) | [Case Study Proposal Notebook](https://github.com/iTrauco/data-science-sad/blob/feature/scenario2-microscopy-classification/notebooks/Microscopy_Image_Classification_Deep_Learning_System_Analysis_And_Design_Proposal.ipynb) | 🔒 |
-| 3 | [Ocean Sensors Concept Drift](https://github.com/iTrauco/data-science-sad/tree/scenario3-ocean-sensors/concept-drift) | TBD | ⚫ |
-| 4 | [Seismic Monitoring Extreme Imbalance](https://github.com/iTrauco/data-science-sad/tree/scenario4-seismic-monitoring/extreme-imbalance) | TBD | ⚫ |
-| 5 | [Climate Science Multimodal Fusion](https://github.com/iTrauco/data-science-sad/tree/scenario5-climate-science/multimodal-fusion) | TBD | ⚫ |
-| 6 | [Traffic Vision Multi-Object Tracking](https://github.com/iTrauco/data-science-sad/tree/scenario06/traffic-vision/multi-object-tracking) | [Case Study Proposal Notebook](https://github.com/iTrauco/data-science-sad/blob/scenario06/traffic-vision/multi-object-tracking/notebooks/%5BDRAFT%5DTraffic%20Vision%20Multi-Object%20Tracking%20-%20System%20Analysis%20and%20Design%20Proposal.ipynb) | 🟡 |
-| 7 | [Lab ISO17025 3D Scanner Validation](https://github.com/iTrauco/data-science-sad/tree/scenario07/lab-iso17025/3d-scanner-validation) | TBD | ⚫ |
-| 8 | [3D Scan Format Conversion](https://github.com/iTrauco/data-science-sad/tree/scenario08/3d-scan/format-conversion) | TBD | ⚫ |
-| 9 |  |  |  |
-| 10 |  |  |  |
-| 11 |  |  |  |
-| 12 |  |  |  |
-| 13 |  |  |  |
-| 14 |  |  |  |
-| 15 |  |  |  |
-| 16 |  |  |  |
-| 17 |  |  |  |
-| 18 |  |  |  |
-| 19 |  |  |  |
-| 20 |  |  |  |
+5. **Computing Environment Architecture**
+   - Resource allocation and scaling
+   - HPC/GPU utilization strategy
+   - Cloud storage integration
 
-**Status Key:** ⚫ Not Started | 🟡 In Progress | 🟢 Complete | 🔒 On Hold | 🔴 Abandoned
+6. **Reproducibility Framework**
+   - Version control and environment management
+   - Experiment tracking system
+   - Documentation standards
+
+## Implementation Considerations
+The proposal includes high-level specifications for:
+- Recommended technology stack
+- System integration points
+- Resource requirements
+- Core pipeline components
+- Learning resources through case study implementation and framework selection
+
+### Pipeline Components
+After several iterations of development, the workflow has been refined to include these core components:
+- **Video Frame Extractor** (HPC batch processing for video to frame conversion)
+- **Annotation Pipeline Manager** (Workflow orchestration for labeling tasks)
+- **Model Training Scheduler** (GPU resource allocation and job management)
+- **Performance Evaluator** (Metrics computation and result aggregation)
+- **Data Pipeline Monitor** (Processing status and resource utilization tracker)
+
+*Note: These components are required deliverables and will be implemented as part of the system design.*
+
+## Reproducibility Framework
+### Environment Setup
+
+This project uses a Conda environment to manage dependencies for reproducible analysis. Follow these steps to set up the environment:
+
+#### Prerequisites
+- Anaconda or Miniconda installed on your system
+- Git for cloning the repository
+
+#### Setup Instructions
+
+1. Clone the repository and switch to the feature branch:
+   ```bash
+   git clone https://github.com/iTrauco/data-science-sad.git
+   cd data-science-sad
+   git checkout traffic-vision/multi-object-tracking
+   ```
+
+2. Create the Conda environment:
+   ```bash
+   conda create -n traffic-vision python=3.11 -y
+   ```
+
+3. Activate the environment:
+   ```bash
+   conda activate traffic-vision
+   ```
+
+4. Install baseline packages:
+   ```bash
+   conda install -c conda-forge jupyter numpy pandas matplotlib seaborn scikit-learn opencv -y
+   ```
+
+5. Install deep learning and computer vision packages:
+   ```bash
+   pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+   pip install ultralytics supervision
+   ```
+
+6. Launch Jupyter Notebook:
+   ```bash
+   jupyter notebook
+   ```
+
+7. Access the notebook in your browser via the URL displayed in the terminal
+
+#### Environment Details
+
+The environment includes essential data science and computer vision packages:
+- [Python 3.9](https://www.python.org/downloads/release/python-390/)
+- [Jupyter Notebook](https://jupyter.org/documentation)
+- [pandas](https://pandas.pydata.org/docs/) & [numpy](https://numpy.org/doc/stable/) for data manipulation
+- [matplotlib](https://matplotlib.org/stable/index.html) & [seaborn](https://seaborn.pydata.org/) for visualization
+- [scikit-learn](https://scikit-learn.org/stable/documentation.html) for traditional ML algorithms
+- [OpenCV](https://docs.opencv.org/4.x/) for image and video processing
+- [PyTorch](https://pytorch.org/docs/stable/index.html) for deep learning model development
+- [Ultralytics](https://docs.ultralytics.com/) for YOLO object detection
+- [Supervision](https://supervision.roboflow.com/) for object tracking utilities
+
+#### Environment Management
+
+For collaborators who enhance the environment with additional packages:
+
+```bash
+# Export the updated environment
+conda activate traffic-vision
+conda env export > environment.yml
+```
+
+This notebook serves as a comprehensive system design proposal, providing the transportation research team with a structured approach to implementing computer vision models for their multi-object tracking and video analysis task. and result aggregation)
