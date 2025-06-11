@@ -5,6 +5,7 @@
 - [Multi-Object Detection Pipeline](#multi-object-detection-pipeline)
 - [Camera Calibration for Traffic Monitoring](#camera-calibration-for-traffic-monitoring)
 - [Vehicle Speed Estimation](#vehicle-speed-estimation)
+- [Lane Detection Using Hough Transform](#lane-detection-using-hough-transform)
 
 <!-- /TOC -->
 
@@ -96,6 +97,29 @@ graph LR
 ```
 
 Speed = (pixel_displacement × scale_factor) / time_delta, where scale_factor = 0.142 m/pixel at 50m distance
+
+## Lane Detection Using Hough Transform
+
+Edge detection and probabilistic Hough transform identify lane markings with 94% accuracy under daylight conditions.
+
+```mermaid
+flowchart TD
+    A[Input Frame] --> B[Grayscale]
+    B --> C[Gaussian Blur]
+    C --> D[Canny Edge]
+    D --> E[ROI Mask]
+    E --> F[Hough Lines]
+    F --> G{Line Angle?}
+    G -->|20°-70°| H[Valid Lane]
+    G -->|Other| I[Reject]
+    H --> J[Polynomial Fit]
+    
+    style D fill:#ffb74d
+    style F fill:#64b5f6
+    style J fill:#aed581
+```
+
+Parameters: Canny(50,150), Hough(ρ=1, θ=π/180, threshold=50, minLength=100, maxGap=50)
 
 
 ```python
