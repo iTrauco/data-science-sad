@@ -1,12 +1,21 @@
-# Python
+# ================================
+# 🐍 PYTHON BUILD ARTIFACTS
+# ================================
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+*.egg
+*.egg-info/
+.installed.cfg
+
+# ================================
+# 📦 PACKAGE MANAGEMENT
+# ================================
 build/
-develop-eggs/
 dist/
+develop-eggs/
 downloads/
 eggs/
 .eggs/
@@ -16,47 +25,20 @@ parts/
 sdist/
 var/
 wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+*.manifest
+*.spec
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# ================================
+# 📓 JUPYTER NOTEBOOKS
+# ================================
+.ipynb_checkpoints/
 */.ipynb_checkpoints/*
 profile_default/
 ipython_config.py
 
-# Virtual Environments
-venv/
-env/
-ENV/
-env.bak/
-venv.bak/
-.env
-.venv
-env/
-venv/
-ENV/
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Unit test / coverage reports
+# ================================
+# 🧪 UNIT TESTING / COVERAGE
+# ================================
 htmlcov/
 .tox/
 .coverage
@@ -67,74 +49,38 @@ coverage.xml
 *.cover
 .hypothesis/
 .pytest_cache/
+__testfile__
 
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-db.sqlite3
-db.sqlite3-journal
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# IPython
-profile_default/
-ipython_config.py
-
-# pyenv
-.python-version
-
-# pipenv
-Pipfile.lock
-
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
+# ================================
+# ⚙️ ENVIRONMENTS
+# ================================
+.venv/
 venv/
+env/
 ENV/
 env.bak/
 venv.bak/
+.python-version
+.env
+.secret
 
-# Spyder project settings
-.spyderproject
-.spyproject
+# ================================
+# 🛠 IDE / PROJECT FILES
+# ================================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
-
-# Data files
+# ================================
+# 🎨 DATA / MODEL FILES
+# ================================
 *.csv
 *.tsv
 *.xls
@@ -148,104 +94,98 @@ dmypy.json
 *.pkl
 *.pickle
 
-# Unless they're small and meant to be included
+# exclude these specific examples:
 !sample_data/*.csv
 !sample_data/*.json
 
-# Large media files
+# ================================
+# 📹 MEDIA FILES
+# ================================
 *.mp4
 *.tiff
 *.avi
 *.flv
 *.mov
 *.wmv
-
-# Image files (comment out if needed for your examples)
+# Optional: uncomment if not storing image samples
 # *.jpg
 # *.jpeg
 # *.png
 # *.gif
 # *.svg
 
-# Model files
-*.model
-*.joblib
-*.h5
-*.pb
+# ================================
+# 🧠 DEEP LEARNING MODEL FILES
+# ================================
 *.pt
 *.pth
-*.onnx
-saved_models/
-checkpoints/
-
-# IDE specific files
-.idea/
-.vscode/
-*.swp
-*.swo
-*~
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-
-# TensorFlow/Keras specific
-.keras/
 *.ckpt
 *.ckpt.*
+*.pb
+*.onnx
 *.meta
 checkpoint
 events.out.tfevents.*
+saved_models/
+checkpoints/
 
-# PyTorch specific
-*.pt
-*.pth
-
-# MLflow
+# ================================
+# 🔬 ML/AI TOOLS
+# ================================
+.keras/
 mlruns/
-
-# Weights & Biases
 wandb/
+ultralytics/  # 🟡 Ultralytics (YOLO) local folder
+runs/         # 🟡 YOLOv5 & YOLOv8 training outputs
 
-# DVC
+# ================================
+# 📁 DVC & DATA MGMT
+# ================================
 .dvc/
+data/
+raw_data/
+processed_data/
+outputs/
+results/
+artifacts/
+*artifact*
+*artifacts*
 
-# Credentials and secrets - never commit these!
+# ================================
+# 🧪 EXPERIMENT TRACKING
+# ================================
+logs/
+*.log
+experiment_logs/
+tensorboard/
+
+# ================================
+# 🔐 CREDENTIALS / SECRETS
+# ================================
 *.pem
 *_key
 *_token
 *_secret
 credentials.json
 client_secrets.json
-.env
-.secret
 apikey.txt
 password.txt
 secrets.yaml
 
-# Logs
-logs/
-*.log
+# ================================
+# 🌐 NODE / FRONTEND LOGS (optional)
+# ================================
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Large folders that should be generated locally
-data/
-raw_data/
-processed_data/
-outputs/
-results/
-# Comment these out if you want to include them in the repo
-# But consider using DVC instead for large data
+# ================================
+# 📖 DOCUMENTATION BUILDS
+# ================================
+docs/_build/
+site/
 
-# development
-*artifacts*
-artifacts/
-*artifact*
-
-# test ignore rule
-__testfile__
+# ================================
+# 📚 STATIC/ASSETS IGNORE (Optional)
+# ================================
+assets/
