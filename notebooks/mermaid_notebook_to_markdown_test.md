@@ -1,3 +1,13 @@
+<!-- TOC -->
+# Table of Contents
+
+- [Traffic Flow State Analysis](#traffic-flow-state-analysis)
+- [Multi-Object Detection Pipeline](#multi-object-detection-pipeline)
+- [Camera Calibration for Traffic Monitoring](#camera-calibration-for-traffic-monitoring)
+
+<!-- /TOC -->
+
+
 ## Traffic Flow State Analysis
 
 Traffic flow exhibits three distinct phases based on density-velocity relationships: free flow (v = vmax), synchronized flow (reduced velocity with increasing density), and congested flow (stop-and-go waves).
