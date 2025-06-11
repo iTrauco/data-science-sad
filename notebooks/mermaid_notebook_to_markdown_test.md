@@ -4,6 +4,7 @@
 - [Traffic Flow State Analysis](#traffic-flow-state-analysis)
 - [Multi-Object Detection Pipeline](#multi-object-detection-pipeline)
 - [Camera Calibration for Traffic Monitoring](#camera-calibration-for-traffic-monitoring)
+- [Vehicle Speed Estimation](#vehicle-speed-estimation)
 
 <!-- /TOC -->
 
@@ -73,6 +74,28 @@ graph TD
 ```
 
 Calibration matrix K contains: focal length (fx=1832.4, fy=1835.7), principal point (cx=956.2, cy=542.8)
+
+## Vehicle Speed Estimation
+
+Optical flow-based speed estimation using Lucas-Kanade method achieves ±3 mph accuracy when calibrated with ground truth radar data.
+
+```mermaid
+graph LR
+    A[Frame t] --> B[Feature Detection]
+    A2[Frame t+1] --> B
+    B --> C[Optical Flow]
+    C --> D[Pixel Displacement]
+    D --> E[Camera Calibration]
+    E --> F[Real-world Speed]
+    F --> G[Kalman Filter]
+    G --> H[Smoothed Speed]
+    
+    style C fill:#b39ddb
+    style F fill:#81c784
+    style H fill:#4fc3f7
+```
+
+Speed = (pixel_displacement × scale_factor) / time_delta, where scale_factor = 0.142 m/pixel at 50m distance
 
 
 ```python
