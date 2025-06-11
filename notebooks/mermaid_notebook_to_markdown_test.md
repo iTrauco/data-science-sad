@@ -6,6 +6,7 @@
 - [Camera Calibration for Traffic Monitoring](#camera-calibration-for-traffic-monitoring)
 - [Vehicle Speed Estimation](#vehicle-speed-estimation)
 - [Lane Detection Using Hough Transform](#lane-detection-using-hough-transform)
+- [Intersection Movement Analysis](#intersection-movement-analysis)
 
 <!-- /TOC -->
 
@@ -120,6 +121,28 @@ flowchart TD
 ```
 
 Parameters: Canny(50,150), Hough(ρ=1, θ=π/180, threshold=50, minLength=100, maxGap=50)
+
+## Intersection Movement Analysis
+
+Computer vision tracks turning movements at 4-way intersection, detecting conflicts with 89% precision using trajectory prediction.
+
+```mermaid
+graph TD
+    A[Vehicle Detection] --> B[Trajectory Extraction]
+    B --> C[Movement Classification]
+    C --> D{Movement Type}
+    D -->|Left Turn| E[Conflict Check]
+    D -->|Through| F[Speed Analysis]
+    D -->|Right Turn| G[Yield Detection]
+    E --> H[Safety Score]
+    F --> H
+    G --> H
+    
+    style C fill:#ce93d8
+    style H fill:#66bb6a
+```
+
+Hourly movements: Left=312, Through=847, Right=423. Critical conflicts: 17/hour (2.1% of turns)
 
 
 ```python
