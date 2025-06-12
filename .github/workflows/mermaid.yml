@@ -24,8 +24,8 @@ jobs:
       
       - name: Commit files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "chris@trau.co
+          git config --local user.name "iTrauco
           git add -A
           git commit -m "Convert notebooks to markdown" || echo "No changes to commit"
           git push

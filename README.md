@@ -41,8 +41,7 @@ The proposed solution addresses the following key subsystems:
 6. **Computing Environment Architecture** [Infrastructure]
   - Resource allocation and scaling
   - HPC/GPU utilization strategy
-  - Cloud storage integration
-7. **Reproducibility Framework** [Infrastructure/MLOps]
+  7. **Reproducibility Framework** [Infrastructure/MLOps]
   - Version control and environment management
   - Experiment tracking system
   - Documentation standards
