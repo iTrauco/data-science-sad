@@ -1,0 +1,6 @@
+names:
+  0: vehicle
+  1: pedestrian
+path: /home/trauco/data-science-sad/annotations/yolo
+train: obj_train_data
+val: obj_train_data
