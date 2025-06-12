@@ -6,68 +6,95 @@
 
 > **Clean Rebuild No. 2**: This is a clean rebuild of the traffic-vision systems analysis and design proposal originally developed in [`scenario06/traffic-vision/multi-object-tracking`](https://github.com/iTrauco/data-science-sad/tree/scenario06/traffic-vision/multi-object-tracking), incorporating refined workflow architecture.
 
+## Table of Contents
+- [Scenario Overview](#scenario-overview)
+- [Proposal Framework](#proposal-framework)
+- [System Components](#system-components)
+  - [Infrastructure Systems](#infrastructure-systems)
+  - [MLOps Workflows](#mlops-workflows-abstracted)
+- [Implementation Considerations](#implementation-considerations)
+  - [Core System Components](#core-system-components)
+- [Reproducibility Framework](#reproducibility-framework)
+  - [Environment Setup](#environment-setup)
+
 ## Scenario Overview
-A transportation research team wants to analyze traffic camera footage to detect and track vehicles across multiple highway locations. They want to use computer vision models with optimization for deployment but struggle with handling streaming video data, model compression, and inference pipeline design and are unsure where to start. They have access to an HPC workstation with GPU and GCP for video storage and pipeline processing. This proposal outlines a systems approach for model development, data handling, and evaluation-including infrastructure recommendations for scalability and reproducibility.
+A transportation research team needs infrastructure to capture and manage traffic camera footage from multiple highway locations.
+
+They require HPC scripts for recording and encoding livestream video feeds, along with a local storage system for archiving recorded videos with proper date/location cataloging. Additionally, they need a data access layer that enables retrieval of stored videos for downstream processing.
+
+They have an HPC workstation with GPU available and need to design the storage architecture, stream capture system, and computational resource allocation to support their requirements.
+
+This proposal outlines the systems infrastructure design for video stream recording, storage management, data access services, and HPC environment configuration to support their video analysis requirements.
 
 ## Proposal Framework
-This Jupyter notebook presents a systems analysis and design approach to the multi-object tracking computer vision challenge. The proposal follows established information systems design principles, emphasizing:
-- **Video Processing Architecture**: Methodical approach to streaming data and computational requirements
-- **Data System Design**: Structured approach to annotation, preprocessing, and training workflows
-- **Model Optimization Strategy**: Process-oriented approach to architecture selection and deployment
-- **System Evaluation Framework**: Comprehensive methodology for performance assessment and validation
+This project presents a systems analysis and design approach to the multi-object tracking computer vision challenge. The proposal follows established information systems design principles, addressing both infrastructure systems and MLOps methodologies:
+
+**Infrastructure Architecture:**
+• **Video Stream Processing**: HPC scripts and computational requirements for livestream capture and encoding
+• **Storage System Design**: Local storage architecture, cataloging, and data access services
+• **Computing Environment**: GPU/CPU resource allocation, job scheduling, and system monitoring
+• **Infrastructure Performance**: System metrics, capacity planning, and reliability
+
+**MLOps Workflows and Frameworks:**
+• **Data Preprocessing**: Frame extraction and transformation processes
+• **Annotation Framework**: Labeling tools, formats, and quality control
+• **Model Development**: Architecture selection, training, and optimization strategies
+• **Model Evaluation**: Performance metrics, validation, and results analysis
 
 ## System Components
-The proposed solution addresses the following key subsystems:
-1. **Data Management Subsystem** [Infrastructure]
-  - Stream recording system (HPC scripts for capture and .mp4 conversion)
-  - Video storage and cataloging
-  - Data format standardization
-2. **Data Preprocessing Subsystem** [MLOps]
-  - Frame extraction from recorded videos
-  - Pre-processing system design
-  - Data transformation for model training
-3. **Data Annotation Framework** [MLOps]
-  - Annotation tool integration and workflow
-  - Label format specifications
-  - Quality control mechanisms
-4. **Model Development Framework** [MLOps]
-  - Architecture selection and training
-  - Model optimization strategies
-  - Performance evaluation system
-5. **Evaluation Infrastructure** [MLOps]
-  - Metrics selection and validation
-  - Performance analysis system
-  - Results visualization framework
-6. **Computing Environment Architecture** [Infrastructure]
-  - Resource allocation and scaling
-  - HPC/GPU utilization strategy
-  7. **Reproducibility Framework** [Infrastructure/MLOps]
-  - Version control and environment management
-  - Experiment tracking system
-  - Documentation standards
+
+> **Note**: In this infrastructure-focused design, elements typically considered foundational (like compute environment) are treated as active system components requiring design and management.
+
+### Infrastructure Systems:
+1. **Stream Recording System**
+   - HPC scripts for livestream capture
+   - Video encoding and compression
+   - Automated save to local storage
+
+2. **Storage Management System**
+   - Local storage architecture
+   - Date/location based cataloging
+   - Archive organization and retention
+
+3. **Data Access Service**
+   - Query system for date/location filtering
+   - Abstraction layer for MLOps access
+
+4. **HPC Computing Environment**
+   - GPU resource allocation
+   - CPU/memory management
+   - Job scheduling system
+
+5. **System Monitoring**
+   - Storage capacity tracking
+   - Stream recording health checks
+   - Resource utilization metrics
+
+### MLOps Workflows (Abstracted):
+1. **Data Preprocessing** - Frame extraction, transformations
+2. **Data Annotation** - Labeling tools and processes
+3. **Model Development** - Training and optimization
+4. **Model Evaluation** - Performance metrics and validation
+
+Access through notebook interface or REST API, isolated from infrastructure complexity.
 
 ## Implementation Considerations
-The proposal includes high-level specifications for:
-- Recommended technology stack
-- System integration points
-- Resource requirements
-- Core system components
-- Learning resources through case study implementation and framework selection
+
+The infrastructure implementation focuses on:
+- HPC workstation setup
+- Video stream recording and cataloging system
+- Data storage and retrieval
+- Resource management
+- System monitoring
 
 ### Core System Components
-> **Note**: There is still overlap between infrastructure and MLOps components that will be worked out as we progress.
 
-After several iterations of development, the workflow has been refined to include these core components:
-- **Data Ingestion Manager** (HPC scripts for video capture and .mp4 conversion) [Infrastructure]
-- **Data Preprocessor** (Frame extraction and transformation workflows) [MLOps]
-- **Annotation System** (Data labeling tools and processes) [MLOps]
-- **Model Development** (Training and optimization) [MLOps]
-- **Evaluation System** (Performance testing and analysis) [Infrastructure/MLOps]
-- **Compute Environment** (GPU, memory, and processing resources) [Infrastructure]
-- **Reproducibility System** (Environment versioning and tracking) [Infrastructure/MLOps]
-
-*Note: These components are required deliverables and will be implemented as part of the system design.*
-
+The infrastructure requires these essential components:
+- **Stream Manager**: Video recording and encoding system
+- **Storage System**: Local data storage and cataloging
+- **Data Access Layer**: File organization and retrieval interface
+- **Compute Environment Architecture**: HPC workstation, GPU resources, and environment management
+- **Monitoring System**: Performance and health tracking
 
 ## Reproducibility Framework
 ### Environment Setup
@@ -137,4 +164,3 @@ For collaborators who enhance the environment with additional packages:
 conda activate traffic-vision
 conda env export > environment.yml
 ```
-This notebook serves as a comprehensive system design proposal, providing the transportation research team with a structured approach to implementing computer vision models for their multi-object tracking and video analysis task.
